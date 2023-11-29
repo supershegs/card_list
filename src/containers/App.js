@@ -26,6 +26,7 @@ import React, { Component } from "react";
 import DataList from "../components/datalist";
 import SearchBox from '../components/SearchBox';
 import Scroll from "../components/Scroll";
+import ErrorBoundry from '../components/ErrorBoundry';
 // import { Data } from "./data"; from manual input from data list.
 
 // import './App.css';
@@ -77,7 +78,9 @@ class App extends Component{
           <SearchBox searchChange={this.onSearchChange}/>
           {/* <DataList Data={Data}/> */}
           <Scroll>
-            <DataList Data={filterFriends}/>
+            <ErrorBoundry>
+              <DataList Data={filterFriends}/>
+            </ErrorBoundry>
           </Scroll>
         </div>
       );   

@@ -16,6 +16,9 @@ const DataList = ({Data}) =>{
             />
         );
     })
+    if(!true){
+        throw new Error('Error is found!, no data found');
+    }
     return (
         <div>
             {dataComponent}
